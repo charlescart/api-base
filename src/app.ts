@@ -1,23 +1,24 @@
 import 'reflect-metadata';
 import {useExpressServer} from 'routing-controllers';
+import express from 'express';
 import { Request, Response } from 'express';
 import path from 'path';
-import Server from './server/server';
 import test from './features/test/test.router';
 
-const server = Server.init(3000);
+const app = express();
+const port = 3000 || process.env.PORT;
 
-useExpressServer(server, {
+useExpressServer(app, {
   routePrefix: '/api',
   controllers: [`${__dirname}/controllers/*Controller.ts`]
 });
 
-server.app.get('/', (req: Request, res: Response) => {
+app.get('/', (req: Request, res: Response) => {
   res.sendFile(path.join(`${__dirname}/public`));
 });
 
-server.app.use(test);
+app.use(test);
 
-server.start(() => {
-  console.log(`Running in port: ${3000}`);
-});
+app.listen(port, function () {
+  console.log(`Run in the port ${port}`);
+})

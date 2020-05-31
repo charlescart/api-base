@@ -3,27 +3,27 @@ import {JsonController, Param, Body, Get, Post, Put, Delete} from 'routing-contr
 @JsonController('/ping')
 export default class PingController {
   @Get('/')
-  getAll() {
+  getAll(): string {
     return 'GET PING';
   }
 
   @Get('/:id')
-  getOne(@Param('id') id: number) {
+  getOne(@Param('id') id: number): number {
     return id;
   }
 
   @Post('/')
-  post(@Body() user: any) {
-    return 'POST PING';
+  post(@Body() user: {id: number, email: string}): {id: number, email: string} {
+    return user;
   }
 
   @Put('/:id')
-  put(@Param('id') id: number, @Body() user: any) {
-    return 'PUT PING';
+  put(@Param('id') id: number, @Body() user: {id: number, email: string}):boolean {
+    return id && user ? true : false;
   }
 
   @Delete('/:id')
-  remove(@Param('id') id: number) {
-    return 'DELETE PING';
+  remove(@Param('id') id: number): number {
+    return id;
   }
 }
