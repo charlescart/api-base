@@ -11,7 +11,7 @@ const port = 3000 || process.env.PORT;
 useExpressServer(app, {
   routePrefix: '/api',
   cors: true,
-  controllers: [`${__dirname}/features/**/*Controller.js`]
+  controllers: [`${__dirname}/features/**/*Controller.ts`]
 });
 
 app.listen(port, function () {
