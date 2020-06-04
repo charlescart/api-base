@@ -1,6 +1,5 @@
 import { JsonController, Body, Post, UseBefore } from 'routing-controllers';
 import { Authentication } from '../../middlewares/Authentication';
-// import { User } from './interfaces/User';
 import User from './validators/User';
 
 @JsonController('/auth')
