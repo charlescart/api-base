@@ -7,7 +7,7 @@ import User from './validators/User';
 export default class AuthController {
 
   @Post('/login')
-  login(@Body() user: { id: number, email: string }): { id: number, email: string } {
+  login(@Body() user: UserDto): UserDto{
     return user;
   }
 
