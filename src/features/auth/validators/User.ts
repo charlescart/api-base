@@ -8,8 +8,9 @@ export default class User {
   @Length(3, 15)
   name!: string;
 
+  @IsNotEmpty()
   @IsEmail()
-  readonly email: string | undefined;
+  email: string | undefined;
 
   // tuve que comentar este, quiero validar que minimo sean 5 digitos la clave
 
