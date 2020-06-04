@@ -15,19 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const test_controller_1 = __importDefault(require("./test.controller"));
 const router = express_1.Router();
-var Direction;
-(function (Direction) {
-    Direction[Direction["Up"] = 0] = "Up";
-    Direction[Direction["Down"] = 1] = "Down";
-    Direction[Direction["Left"] = 2] = "Left";
-    Direction[Direction["Right"] = 3] = "Right";
-})(Direction || (Direction = {}));
-;
 router.post('/v1/test/algorithm', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log('Ronny!');
-    const dir = Direction.Up;
-    console.log(dir);
-    console.log(req.body);
     yield test_controller_1.default.algorithm(req)
         .then((response) => {
         // standarResponse({ res, req, response })

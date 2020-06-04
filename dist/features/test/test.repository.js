@@ -8,7 +8,7 @@ const testRepository = {
             return a;
         else {
             b = b - 1;
-            return a + testRepository.algorithm({ a, b });
+            return (a + testRepository.algorithm({ a, b }));
         }
     }
 };

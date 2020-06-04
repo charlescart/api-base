@@ -15,6 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const test_repository_1 = __importDefault(require("./test.repository"));
 const testController = {
     algorithm: (req) => __awaiter(void 0, void 0, void 0, function* () {
+        // no imprime body
+        console.log(req.body);
         return test_repository_1.default.algorithm(req.body);
     })
 };
