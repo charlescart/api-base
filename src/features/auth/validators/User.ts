@@ -4,9 +4,9 @@ export default class User {
 
   // Ronny, tuve que ponerle a todas "| undefined" porque me daba error
 
+  @IsNotEmpty()
   @Length(3, 15)
-  readonly name: string | undefined;
-  readonly surname: string | undefined;
+  name!: string;
 
   @IsEmail()
   readonly email: string | undefined;
