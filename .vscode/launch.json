@@ -13,7 +13,7 @@
       ],
       "program": "${workspaceFolder}/src/app.ts",
       "preLaunchTask": "npm: copyfiles",
-      // "preLaunchTask": "tsc: watch - tsconfig.json",
+      "envFile": "${workspaceFolder}/.env",
       "outFiles": [
         "${workspaceFolder}/dist/*.js"
       ]

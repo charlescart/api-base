@@ -3,8 +3,7 @@ import { useExpressServer } from 'routing-controllers';
 import express from 'express';
 
 const app = express();
-const port = 3000 || process.env.PORT;
-// const routePrefix = process.env.ROUTE_PREFIX || '/api';
+const port = process.env.PORT || 3000;
 
 useExpressServer(app, {
   routePrefix: '/api',
