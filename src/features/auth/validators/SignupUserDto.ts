@@ -1,4 +1,6 @@
-import { Length, IsEmail, IsNotEmpty, MinLength } from "class-validator";
+import {
+  Length, IsEmail, IsNotEmpty, MinLength,
+} from 'class-validator';
 
 export default class SignupUserDto {
   @IsNotEmpty()
