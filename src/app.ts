@@ -1,24 +1,17 @@
+/* eslint-disable no-console */
 import 'reflect-metadata';
-import {useExpressServer} from 'routing-controllers';
+import { useExpressServer } from 'routing-controllers';
 import express from 'express';
-import { Request, Response } from 'express';
-import path from 'path';
-import test from './features/test/test.router';
 
 const app = express();
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 useExpressServer(app, {
   routePrefix: '/api',
-  controllers: [`${__dirname}/controllers/*Controller.ts`]
+  cors: true,
+  controllers: [`${__dirname}/features/**/*Controller.ts`],
 });
 
-app.get('/', (req: Request, res: Response) => {
-  res.sendFile(path.join(`${__dirname}/public`));
-});
-
-app.use(test);
-
-app.listen(port, function () {
+app.listen(port, () => {
   console.log(`Run in the port ${port}`);
-})
+});
